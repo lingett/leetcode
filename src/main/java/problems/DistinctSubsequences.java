@@ -28,7 +28,7 @@ public class DistinctSubsequences extends BaseProblem {
      * 【递归出口】：当前T的长度 = 0
      * T在S中子串的个数，即是求当前
      */
-    int numDistinct_byRecursion(String S, String T) {
+    private static int numDistinct_byRecursion(String S, String T) {
         int result = 0;
         int sLength = S.length();
         int tLength = T.length();
@@ -53,7 +53,7 @@ public class DistinctSubsequences extends BaseProblem {
      * 如果T[i]！=S[j]，dp[i][j]=dp[i][j-1]
      * 如果T[i]=S[j]，dp[i][j]=dp[i][j-1]+dp[i-1][j-1]
      */
-    int numDistinct_byDynamicProgramming(String S, String T) {
+    private static int numDistinct_byDynamicProgramming(String S, String T) {
         int tLength = T.length();
         int sLength = S.length();
         int dp[][] = new int[tLength + 1][sLength + 1];
