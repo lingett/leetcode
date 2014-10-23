@@ -16,7 +16,7 @@ public class SwapNodesInPairs extends BaseProblem {
 
     @Override
     protected void execute() {
-        int count = SPACE * 4;
+        int count = SPACE * 0;
         ListNode head = new ListNode(1);
         ListNode currentNode = head;
         for (int i = 2; i <= count; i++) {
@@ -24,6 +24,9 @@ public class SwapNodesInPairs extends BaseProblem {
             currentNode.setNext(newNode);
             currentNode = newNode;
         }
+
+//        ListNode newNode = new ListNode(count + 1);
+//        currentNode.setNext(newNode);
 
         currentNode = head;
         while (currentNode != null) {
@@ -42,6 +45,10 @@ public class SwapNodesInPairs extends BaseProblem {
     }
 
     public static ListNode swapInSpace(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
         ListNode resultHead = null;
         ListNode resultTail = head;
         ListNode currentNode = head;
@@ -74,6 +81,14 @@ public class SwapNodesInPairs extends BaseProblem {
             }
 
             spaceIndex++;
+        }
+
+        if (spaceIndex != 1) {
+            resultTail.setNext(nodeCacheHead);
+        }
+
+        if(resultHead == null) {
+            resultHead = resultTail;
         }
 
         return resultHead;
