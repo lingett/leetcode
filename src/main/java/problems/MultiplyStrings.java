@@ -15,8 +15,8 @@ import common.BaseProblem;
 public class MultiplyStrings extends BaseProblem {
     @Override
     protected void execute() {
-        String s1 = "672";
-        String s2 = "8";
+        String s1 = "2925";
+        String s2 = "4787";
         System.out.println(multiply(s1, s2));
     }
 
@@ -42,8 +42,8 @@ public class MultiplyStrings extends BaseProblem {
         carry = 0;
         for (int i = 1; i < num2.length(); i++) {
             for (int j = 0; j <= num1.length() + num2.length(); j++) {
-                sum = multiplyArr[i][j] + multiplyArr[i - 1][j];
-                multiplyArr[i][j] = sum % 10 + carry;
+                sum = multiplyArr[i][j] + multiplyArr[i - 1][j] + carry;
+                multiplyArr[i][j] = sum % 10;
                 carry = sum / 10;
             }
         }
