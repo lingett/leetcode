@@ -2,14 +2,12 @@ package problems;
 
 import common.BaseProblem;
 
-import java.util.Arrays;
-
 /**
  * Created by gelin on 14/10/31.
  * Given an array and a value, remove all instances of that value in place and return the new length.
  * The order of elements can be changed. It doesn't matter what you leave beyond the new length.
  */
-public class c extends BaseProblem {
+public class RemoveElement extends BaseProblem {
     @Override
     protected void execute() {
         int n = 10;
